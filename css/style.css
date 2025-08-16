@@ -1,69 +1,44 @@
-/* ========== Dunkles, LaTeX-nahes Minimal-Theme ========== */
-
 :root{
   --bg:#0b0c0f; --bg-soft:#121419; --fg:#e7e7e7; --muted:#a9a9a9; --border:#242834;
-  --accent:#8fb3ff; --accent-visited:#b59dff;
-  --maxw: 820px; --pad:1rem; --radius:10px; --gap:1rem;
-  --fs-0:15.5px; --fs-1:17px; --fs-2:20px; --fs-3:24px; --fs-4:30px;
+  --accent:#8fb3ff; --accent-visited:#b59dff; --maxw:820px; --pad:1rem; --radius:10px; --gap:1rem;
 }
-
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body.latex{
-  background:var(--bg); color:var(--fg);
-  font-family:"Latin Modern Roman","Libertinus Serif","CMU Serif","STIX Two Text",Georgia,serif;
-  font-size:var(--fs-1); line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-}
-a{color:var(--accent); text-decoration:none}
-a:hover{text-decoration:underline; text-underline-offset:2px}
+body{background:var(--bg);color:var(--fg);
+  font:17px/1.6 "Latin Modern Roman","Libertinus Serif","CMU Serif","STIX Two Text",Georgia,serif}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:2px}
 a:visited{color:var(--accent-visited)}
-.container{max-width:var(--maxw); margin:0 auto; padding:2.2rem var(--pad)}
-h1,h2,h3{line-height:1.25; margin:1.2rem 0 .6rem; font-weight:600; letter-spacing:.2px}
-h1{font-size:var(--fs-4)} h2{font-size:var(--fs-3)} h3{font-size:var(--fs-2)}
-p{margin:.6rem 0 1rem} .lead{color:var(--muted)}
-.muted{color:var(--muted)}
 
-.page-header{margin-bottom:1rem}
+.container{max-width:var(--maxw);margin:0 auto;padding:2.2rem var(--pad)}
+.page-header h1{margin:0;font-size:2rem}
+.banner img{width:100%;border-radius:var(--radius);margin-top:1rem}
+.banner figcaption{color:var(--muted);font-size:.95rem;margin-top:.5rem;text-align:center}
 
-/* Bannerbild + Bildunterschrift */
-.banner{margin:1rem 0}
-.banner img{
-  width:100%; height:auto; display:block;
-  border:1px solid var(--border); border-radius:.5rem; background:var(--bg-soft);
+.site-footer{border-top:1px solid var(--border);margin-top:2rem;padding:1.1rem var(--pad)}
+.links{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin:0;padding:0;list-style:none}
+.links a{color:var(--muted)}
+.links a:hover{color:var(--fg)}
+.copyright{margin:.5rem 0 0 0;text-align:center;color:var(--muted);font-size:.95rem}
+
+/* Signature block */
+.signature-block {
+  margin-top: 2rem;
 }
-.banner figcaption{color:var(--muted); margin-top:.4rem; font-size:.98rem}
-
-/* Signaturblock */
-.signature-block{margin-top:1.3rem}
-.sig-lines{display:flex; gap:1rem; flex-wrap:wrap; color:var(--muted)}
-.signature{
-  display:block; margin:.35rem 0 .15rem 0;
-  height:48px; width:auto; object-fit:contain; filter:brightness(1.1);
+.sig-lines {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
 }
-.sig-name{font-weight:600}
-
-/* Listen / Events */
-.event-list{list-style:none; padding:0; margin:1rem 0; display:grid; gap:.75rem}
-.event-list li{
-  background:var(--bg-soft); border:1px solid var(--border);
-  border-radius:var(--radius); padding:.8rem 1rem;
+.signature {
+  display: block;
+  margin: 0.5rem auto;
+  max-height: 70px;
+  filter: invert(1); /* inverts black to white */
 }
-.event-list small{display:block; color:var(--muted); margin-top:.2rem}
-
-/* Footer */
-.site-footer{
-  border-top:1px solid var(--border); margin-top:2rem; padding:1.1rem var(--pad);
-}
-.links{
-  list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center;
-}
-.links a{color:var(--muted)} .links a:hover{color:var(--fg)}
-.copyright{margin:.5rem 0 0; text-align:center; color:var(--muted); font-size:.95rem}
-
-/* Responsive: Bild + Titel nebeneinander bleiben, dann stacken */
-.hero{display:grid; grid-template-columns:120px 1fr; gap:1rem; align-items:center}
-.avatar{width:120px; height:120px; border-radius:50%; object-fit:cover; background:var(--bg-soft); border:1px solid var(--border)}
-@media (max-width:640px){
-  .hero{grid-template-columns:80px 1fr}
-  .avatar{width:80px; height:80px}
+.sig-name {
+  text-align: center;
+  margin-top: 0.25rem;
+  font-weight: 500;
 }
